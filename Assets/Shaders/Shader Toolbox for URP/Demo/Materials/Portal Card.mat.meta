@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 64816396d72a79e409524f0e23532545
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Materials/Portal Card.mat
+  uploadId: 864446

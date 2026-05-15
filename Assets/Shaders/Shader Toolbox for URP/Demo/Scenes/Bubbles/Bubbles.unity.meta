@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6281f1e6a3e053c46ac3ef5a6f91ad89
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/Bubbles/Bubbles.unity
+  uploadId: 864446

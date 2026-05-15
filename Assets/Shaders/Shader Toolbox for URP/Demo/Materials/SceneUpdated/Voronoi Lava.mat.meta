@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4fa458d87102e734fbb3d18152d2ef03
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Materials/SceneUpdated/Voronoi Lava.mat
+  uploadId: 864446

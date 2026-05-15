@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dbabeab37d0448a45ababa47e08433d6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Materials/Lit Base.mat
+  uploadId: 864446

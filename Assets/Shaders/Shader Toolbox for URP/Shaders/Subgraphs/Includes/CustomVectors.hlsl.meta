@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4f894b9c945bd5d4ea45934d7f15abc6
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Shaders/Subgraphs/Includes/CustomVectors.hlsl
+  uploadId: 864446

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ef17083b345a88a48b7c5b61e4118653
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Shaders/Editor/MeshExplosionShaderGUI.cs
+  uploadId: 864446

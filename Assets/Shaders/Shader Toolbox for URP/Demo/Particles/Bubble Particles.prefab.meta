@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9be9c3c5f83f3a94fba8d71e103e1529
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Particles/Bubble Particles.prefab
+  uploadId: 864446

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d311334897de7e6498b87deaf659d2fc
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/Mesh Explosion/Mesh Explosion.unity
+  uploadId: 864446

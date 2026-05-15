@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9d2a2716573e67647b814f50a10658e5
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/Glitter/Glitter.unity
+  uploadId: 864446

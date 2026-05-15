@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 019b4da3b0c8fc24abf55b73abd96a0c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/Portal Card/Portal Card.unity
+  uploadId: 864446

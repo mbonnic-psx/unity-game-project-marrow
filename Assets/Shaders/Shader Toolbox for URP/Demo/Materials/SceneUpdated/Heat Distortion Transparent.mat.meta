@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 29ea93a9ad8bd504c891e2df0908f9dc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Materials/SceneUpdated/Heat Distortion
+    Transparent.mat
+  uploadId: 864446

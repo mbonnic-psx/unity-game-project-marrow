@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 049e47c518bd1e844bb498da8e99d97d
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/Glass/Glass.unity
+  uploadId: 864446

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1516488e5d278b94096ba543013601df
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 160556
+  packageName: Snapshot Shaders Pro for URP, HDRP & Built-in
+  packageVersion: 1.7.1
+  assetPath: Assets/Snapshot Shaders Pro/Editor/SnapshotInstallerWindow.cs
+  uploadId: 762010

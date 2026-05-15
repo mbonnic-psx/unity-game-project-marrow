@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 69a87a8e7d01e624694da375da838e22
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Shaders/Subgraphs/Includes/CustomRandom.hlsl
+  uploadId: 864446

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 03a1a0897c97d0a4a880dc76671bf444
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/Lit Stochastic/Lit Stochastic.unity
+  uploadId: 864446

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a255841672fa11a41bbe4230d80b939a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Prefabs/Cave.prefab
+  uploadId: 864446

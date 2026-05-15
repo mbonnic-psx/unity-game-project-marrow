@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 98b49334ac9efa3408098d9bf998a0be
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/Base Lit/Base Lit.unity
+  uploadId: 864446

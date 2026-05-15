@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4b96b360b3a3a4d4390e832ba5b40e15
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Prefabs/StandBakedFacePos.prefab
+  uploadId: 864446

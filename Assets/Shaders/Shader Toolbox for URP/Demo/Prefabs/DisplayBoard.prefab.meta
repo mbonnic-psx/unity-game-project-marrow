@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5aa8f79cd6416fd4ea3f09ac4a61ebc3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Prefabs/DisplayBoard.prefab
+  uploadId: 864446

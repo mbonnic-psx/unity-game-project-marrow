@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e80df947d11974a4588550fe37d928ed
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Shaders/Subgraphs/Includes/CustomColors.hlsl
+  uploadId: 864446

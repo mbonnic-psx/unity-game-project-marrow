@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c6c169e040e0014e8b228d79e53c337
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Prefabs/Asset Open Button.prefab
+  uploadId: 864446

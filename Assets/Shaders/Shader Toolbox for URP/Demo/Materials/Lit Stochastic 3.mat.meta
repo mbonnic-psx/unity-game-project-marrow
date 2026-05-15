@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a7dcbb5e66c38864a9b10914e94516b3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Materials/Lit Stochastic 3.mat
+  uploadId: 864446

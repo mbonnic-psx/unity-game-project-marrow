@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a62985f4a7623dc41a9a21124bcba448
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Materials/SceneUpdated/Mesh Explosion
+    Offset.mat
+  uploadId: 864446

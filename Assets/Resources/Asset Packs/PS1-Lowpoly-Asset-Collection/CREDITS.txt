@@ -1,0 +1,18 @@
+All third-party textures and assets are used in accordance with their respective licenses.
+This project is for educational and demonstration purposes only.
+If you are the creator of any included asset and wish to request removal or attribution changes, please contact me.
+
+Assets and Textures:
+
+Textures.com
+Screaming Brain Studios: https://screamingbrainstudios.itch.io/
+	- Bricks_02-256x256
+	- Grating_01-256x256
+	- Grating_14-256x256
+	- Horror_Metal_08-256x256
+	- Horror_Metal_13-256x256
+	- Metal_19-256x256
+	- Roofs_01-256x256
+The Gas Station: https://thegasstation.itch.io/
+	- external (5)
+	- external (14)

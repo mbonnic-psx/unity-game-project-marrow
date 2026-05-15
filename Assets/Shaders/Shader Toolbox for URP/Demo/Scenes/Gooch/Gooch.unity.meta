@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e63ef11bb0c5f344fbf634823ffcfb9c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/Gooch/Gooch.unity
+  uploadId: 864446

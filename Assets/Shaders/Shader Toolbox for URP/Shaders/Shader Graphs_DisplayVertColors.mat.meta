@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4b4737a1a1ca8494faa17a82a779f722
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Shaders/Shader Graphs_DisplayVertColors.mat
+  uploadId: 864446

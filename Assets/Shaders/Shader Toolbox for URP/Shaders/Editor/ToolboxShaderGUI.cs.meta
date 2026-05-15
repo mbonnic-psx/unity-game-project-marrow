@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 47c9ef77cf7ffd44297c04c4c2c44cbd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Shaders/Editor/ToolboxShaderGUI.cs
+  uploadId: 864446

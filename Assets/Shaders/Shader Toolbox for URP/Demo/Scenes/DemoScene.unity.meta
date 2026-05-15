@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1b6333c40c85de946bb8a9ee050bf86c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/DemoScene.unity
+  uploadId: 864446

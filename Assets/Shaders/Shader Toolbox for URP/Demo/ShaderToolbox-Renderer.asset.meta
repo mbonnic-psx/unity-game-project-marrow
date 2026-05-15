@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6eef619b7ebbf4c4c91f465fe4bed826
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/ShaderToolbox-Renderer.asset
+  uploadId: 864446

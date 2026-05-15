@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 33cd8c22fbdd62c4ba4c2d011da569cd
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Prefabs/DisplayStand.prefab
+  uploadId: 864446

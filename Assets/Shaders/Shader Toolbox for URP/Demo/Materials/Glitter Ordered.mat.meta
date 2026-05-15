@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3b271167cf9487d4e9f2445a41ae9fca
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Materials/Glitter Ordered.mat
+  uploadId: 864446

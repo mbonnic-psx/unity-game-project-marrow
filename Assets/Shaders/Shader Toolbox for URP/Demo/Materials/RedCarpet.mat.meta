@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ccaece2e43d1c9d409b8e560eb709a31
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Materials/RedCarpet.mat
+  uploadId: 864446

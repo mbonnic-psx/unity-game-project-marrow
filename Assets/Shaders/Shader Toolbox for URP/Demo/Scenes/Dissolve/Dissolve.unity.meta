@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3065cadc844cf25438ee8923ab28e8c3
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Demo/Scenes/Dissolve/Dissolve.unity
+  uploadId: 864446

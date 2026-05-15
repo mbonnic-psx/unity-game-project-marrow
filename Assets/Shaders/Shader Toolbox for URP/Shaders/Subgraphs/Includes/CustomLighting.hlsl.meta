@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d2964d7358b2e8d45b46fe7b7370d2b1
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Shaders/Subgraphs/Includes/CustomLighting.hlsl
+  uploadId: 864446

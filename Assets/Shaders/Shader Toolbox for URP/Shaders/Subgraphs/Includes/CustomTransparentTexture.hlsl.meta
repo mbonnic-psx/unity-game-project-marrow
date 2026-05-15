@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2c179de6936a1784db1e6564bbba681b
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307915
+  packageName: Shader Toolbox for URP
+  packageVersion: 1.1.0
+  assetPath: Assets/Shader Toolbox for URP/Shaders/Subgraphs/Includes/CustomTransparentTexture.hlsl
+  uploadId: 864446
