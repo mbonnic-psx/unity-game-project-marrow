@@ -1,6 +1,5 @@
 <div align="center">
-
-```
+<pre>
 ╔══════════════════════════════════════════════════════════════╗
 ║                                                              ║
 ║   ███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗   ║
@@ -14,7 +13,7 @@
 ║          ░░░░░░░░░░ ACTIVELY IN DEVELOPMENT ░░░░░░░░░░       ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝
-```
+</pre>
 
 ![Unity](https://img.shields.io/badge/Unity-0d1117?style=for-the-badge&logo=unity&logoColor=ffffff)
 ![C#](https://img.shields.io/badge/C%23-0d1117?style=for-the-badge&logo=csharp&logoColor=a855f7)
