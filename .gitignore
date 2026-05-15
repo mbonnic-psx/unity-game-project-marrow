@@ -16,6 +16,10 @@
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
 
+#version control
+.plastic/
+*.plastic
+
 # Recordings can get excessive in size
 /[Rr]ecordings/
 
