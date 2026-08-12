@@ -12,6 +12,8 @@ Marrow is a first-person, PS1-aesthetic survival-horror wave shooter built in Un
 
 The current design problem, confirmed by playtest: **the player outruns everything, so combat is optional and therefore boring.** The fix is spatial pressure (forward-biased spawning, intercept pathing, objective anchors), NOT enemy speed-scaling — speed-scaling loses to bhop compounding. Prioritize work that makes combat mandatory and fun over new content or maps.
 
+**Before picking up new work, check `marrow-build-board.md`.** It is the authoritative task list — ordered by what makes the game fun, not what's easiest — and its `▶ NEXT UP` section is the current answer to "what should I work on." Update it (not just this file) when a task is finished.
+
 ## Tech stack
 
 - Unity **6000.0.32f1** (Unity 6), **URP**
@@ -45,15 +47,19 @@ Assets/
 - ✅ `RegisterKill()` IS wired into `EnemyHealth.TakeDamage` (this was the old #1 blocker — it's fixed)
 - ✅ `DeadState` resets `timer = 0f` in `EnterState()` (stale-timer ragdoll bug fixed)
 - ✅ `PlayerImpulse.AddImpulse()` exists as a separate velocity layer alongside `PlayerMovement`
+- ✅ Throwable aim, velocity, and wall-tunneling fixed (Phase 0)
+- ✅ Skeleton ragdoll-cap/vanish bug fixed (Phase 0)
+- ✅ Forward-biased spawning is live in `WaveManager.cs` (`leadTime`, `aheadWeight`, `PickSpawnPoint()` weights points ahead of the player's travel direction). **But** `ChaseState.cs` still calls `EnemyNav.SetDestination(esm.PlayerTransform.position)` with no predicted lead — interception AI is NOT implemented despite spawn-ahead being done. Verify before assuming either is/isn't in place.
 - ⏳ **Two-slot weapon system NOT yet integrated.** Five scripts were designed (`WeaponSO`, `WeaponInventory`, `WeaponFire`, `WeaponImpulse`, `WeaponPickup`) to replace `WeaponHandler` + old `WeaponPickup`, with diffs to `PlayerMovement`, `AttackSystem`, `RaycastInteraction`. They are not in the repo yet — check before assuming either system.
 - ⏳ **Multi-enemy-type system NOT yet built.** Plan: `EnemyTypeSO` ScriptableObject + `EnemyIdentity`, `ObjectPool` refactored to `Dictionary<EnemyTypeSO, Queue>`, weighted spawn tables in `WaveManager`. Roster: Sprinter, Brute/tank, one-leg crawler, no-leg crawler, sprinter crawler.
-- Progress is tracked on `marrow-build-board-v2.html` (~75 tasks, 9 phases). Phase order: 0 blockers → 1 threat/combat fun → 2 economy → 3 power moment → 4 UI legibility → 5 sound → 6 juice → 7 map variety → 8 playtest/ship. **Phase 1 is the game** — combat threat work outranks everything else.
+- Progress is tracked on `marrow-build-board.md` (~75 tasks, 9 phases) — see the note above. Phase order: 0 blockers → 1 threat/combat fun → 2 economy → 3 power moment → 4 UI legibility → 5 sound → 6 juice → 7 map variety → 8 playtest/ship. **Phase 1 is the game** — combat threat work outranks everything else.
 
 ## Known bugs (open)
 
-- Throwables aim off-center from crosshair; travel too fast and tunnel through walls (needs continuous collision / speed cap)
-- Enemies clip through walls
+- Enemies clip through walls (NavMesh carving / missing obstacle colliders)
+- Player passes through certain walls (collider gaps in the modular alleyway seams)
 - Out-of-bounds colliders too short — boost mechanic clears them (raise at boundary; INSIDE the map, boost routes are a feature, keep them)
+- Framerate hitch at run start (likely instantiate spike — pool enemies/props on load)
 - UI communicates nothing: health, shells, wave, objective, power state all unreadable
 - No sound implemented anywhere
 
