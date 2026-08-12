@@ -23,4 +23,10 @@ public class EnemyNav : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.SetDestination(target);
     }
+
+    public void WarpTo(Vector3 position)
+    {
+        navMeshAgent.Warp(position);
+        navMeshAgent.isStopped = false;
+    }
 }

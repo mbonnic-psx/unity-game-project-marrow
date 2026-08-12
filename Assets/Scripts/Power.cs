@@ -14,6 +14,7 @@ public class Power : MonoBehaviour
     [Header("POWER ON")]
     [SerializeField] private List<GameObject> powerDoors;
     [SerializeField] private List<Collider> perkColliders;
+    [SerializeField] public bool powerFlag;
 
     void Awake()
     {
@@ -29,6 +30,8 @@ public class Power : MonoBehaviour
         // Make sure all placed visuals start hidden
         foreach (GameObject part in placedParts)
             part.SetActive(false);
+
+        powerFlag = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -70,6 +73,8 @@ public class Power : MonoBehaviour
         
         foreach(Collider perk in perkColliders)
         perk.enabled = true;
+
+        powerFlag = true;
 
     }
 }

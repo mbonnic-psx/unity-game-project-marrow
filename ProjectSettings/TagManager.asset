@@ -11,6 +11,7 @@ TagManager:
   - Perk
   - Start
   - Quit
+  - Win
   layers:
   - Default
   - TransparentFX

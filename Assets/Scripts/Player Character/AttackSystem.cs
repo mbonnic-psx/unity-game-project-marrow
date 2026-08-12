@@ -12,6 +12,7 @@ public class AttackSystem : MonoBehaviour
     [SerializeField] private Vector3 rotationSpeed = new Vector3(50, 50, 50);
     [SerializeField] private KeyCode lMouse = KeyCode.Mouse0;
     [SerializeField] private LayerMask layers;
+    [SerializeField] private WeaponHandler weaponHandler;
 
     private GameObject heldObject;
     private Rigidbody objectRb;
@@ -55,7 +56,7 @@ public class AttackSystem : MonoBehaviour
 
         if (Input.GetKeyDown(lMouse))
         {
-            if (heldObject == null)
+            if (heldObject == null && (weaponHandler == null || !weaponHandler.IsEquipped))
             {
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, pickupRange, layers))
                 {

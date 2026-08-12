@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float currentHealth;
     private EnemyStateMachine esm;
+    private ShotgunCharge sc;
 
     #region 
     public float MaxHealth => maxHealth;
@@ -14,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     void Awake()
     {
         esm = GetComponent<EnemyStateMachine>();
+        sc = FindAnyObjectByType<ShotgunCharge>();
     }
 
     void Start()
@@ -25,10 +27,16 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= amount;
         currentHealth = Mathf.Max(currentHealth, 0f);
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             //esm.WaveManager.EnemyDied(); 
-            esm.ChangeState(esm.DeadState); 
+            esm.ChangeState(esm.DeadState);
+
+
+            if (sc != null)
+            {
+                sc.RegisterKill();
+            }
         }
     }
 

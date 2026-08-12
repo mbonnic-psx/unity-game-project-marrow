@@ -54,6 +54,9 @@ public class RaycastInteraction : MonoBehaviour
                     case "Quit":
                         hit.collider.GetComponent<SceneManager>()?.QuitGame();
                         break;
+                    case "Win":
+                        hit.collider.GetComponent<WinCondition>()?.WinGame();
+                    break;
                 }
             }
         }

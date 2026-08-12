@@ -94,6 +94,10 @@ public class PlayerMovement : MonoBehaviour
     float control;
     float drop;
 
+    #region Getters
+    public Vector3 HorizontalVelocity => new Vector3(playerVelocity.x, 0f, playerVelocity.z);
+    #endregion
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

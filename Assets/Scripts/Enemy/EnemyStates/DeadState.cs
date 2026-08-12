@@ -13,6 +13,7 @@ public class DeadState : IState
 
     public void EnterState()
     {
+        timer = 0f;
         esm.EnemyNav.StopMoving();
         esm.EnemyRagdoll.EnableRagdoll();
         esm.EnemyDrop.DropItems();

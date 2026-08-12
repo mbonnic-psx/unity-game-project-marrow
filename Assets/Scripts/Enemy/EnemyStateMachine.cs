@@ -18,6 +18,9 @@ public class EnemyStateMachine : MonoBehaviour
     [SerializeField] private ObjectPool objectPool;
     [SerializeField] private BillBoard billBoard;
     [SerializeField] private PlayerUI playerUI;
+    [SerializeField] private float cullRange = 50f;          // beyond this → recycle to a fresh spawn ahead
+    [SerializeField] private float cullCheckInterval = 0.5f;
+    private float cullTimer;
     private IState currentState;
     private AttackState attackState;
     private ChaseState chaseState;
@@ -78,6 +81,18 @@ public class EnemyStateMachine : MonoBehaviour
         if (currentState != null)
         {
             currentState.Execute();
+        }
+
+            // recycle hopeless stragglers into the forward cone
+        if (currentState != deadState && waveManager != null && playerTransform != null)
+        {
+            cullTimer += Time.deltaTime;
+            if (cullTimer >= cullCheckInterval)
+            {
+                cullTimer = 0f;
+                if (DistanceToPlayer() >= cullRange)
+                    waveManager.RelocateEnemy(this);
+            }
         }
     }
 
