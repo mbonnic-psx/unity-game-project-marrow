@@ -23,6 +23,11 @@ public class PlayerStats : MonoBehaviour
     public float CurrentHealth => currentHealth;
     #endregion
 
+    // Damage read-outs (vignette, future damage-direction indicator, hurt sounds) subscribe here rather than
+    // polling CurrentHealth every frame.
+    public event System.Action<float> OnDamaged;                  // amount of the hit
+    public event System.Action<float, float> OnHealthChanged;     // (current, max)
+
     void Awake()
     {
         currentHealth = maxHealth;
@@ -43,6 +48,11 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= amount;
         currentHealth = Mathf.Max(currentHealth, 0f);
+
+        // Fired before the death check so the final hit still registers as a hit, not just as a death.
+        OnDamaged?.Invoke(amount);
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+
         if (currentHealth <= 0)
         {
             PlayerDied();
@@ -60,6 +70,7 @@ public class PlayerStats : MonoBehaviour
         {
             yield return new WaitForSeconds(5f);
             currentHealth = maxHealth;
+            OnHealthChanged?.Invoke(currentHealth, maxHealth);   // lets the vignette clear when the regen lands
         }
 
     }
@@ -99,5 +110,6 @@ public class PlayerStats : MonoBehaviour
     {
         maxHealth = h;
         currentHealth = h;
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);   // keep subscribers correct if max health is changed at runtime
     }
 }

@@ -159,6 +159,6 @@ public class WaveManager : MonoBehaviour
         Transform sp = PickSpawnPoint();               // same weighted forward-cone pick as spawning
         if (sp == null) return;
         esm.EnemyNav.WarpTo(sp.position);
-        esm.EnemyNav.SetDestination(playerTransform.position);  // re-path immediately
+        esm.EnemyNav.SetDestination(esm.PredictedPlayerPosition(leadTime, 10f));  // re-path toward where the player's headed, not where they were
     }
 }

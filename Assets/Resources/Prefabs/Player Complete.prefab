@@ -5461,6 +5461,7 @@ GameObject:
   - component: {fileID: 9112757672213513759}
   - component: {fileID: 1465979236011034234}
   - component: {fileID: 6637884108861232527}
+  - component: {fileID: 7412762073977455603}
   - component: {fileID: 4993719264518567283}
   - component: {fileID: 4436769396142040658}
   m_Layer: 7
@@ -5656,6 +5657,33 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   prompt: {fileID: 2346308657112650505}
+--- !u!114 &7412762073977455603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431267568081191181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f795f0d07ad48b34daeaaf3dd306da0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 1614717599844034009}
+  sortingOrder: 100
+  startHealthFraction: 0.99
+  fullEffectHealthFraction: 0.34
+  maxAlpha: 0.85
+  punchAmount: 0.55
+  punchDecay: 2.5
+  intensityLerpSpeed: 8
+  overscanHealthy: 1200
+  overscanHurt: 0
+  vignetteColor: {r: 0.6, g: 0, b: 0, a: 1}
+  innerRadius: 0.3
+  outerRadius: 1.05
+  textureSize: 256
+  testHitKey: 104
 --- !u!54 &4993719264518567283
 Rigidbody:
   m_ObjectHideFlags: 0

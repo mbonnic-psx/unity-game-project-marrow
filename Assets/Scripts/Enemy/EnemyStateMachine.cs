@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 //Has the current state and handles the transitions
 
 public class EnemyStateMachine : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
+    private PlayerMovement playerMovement;
     [SerializeField] private GameObject playerObject;
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private Collider enemyCollider;
@@ -20,7 +22,10 @@ public class EnemyStateMachine : MonoBehaviour
     [SerializeField] private PlayerUI playerUI;
     [SerializeField] private float cullRange = 50f;          // beyond this → recycle to a fresh spawn ahead
     [SerializeField] private float cullCheckInterval = 0.5f;
+    [SerializeField] private float velocitySmoothing = 6f;   // higher = tracks the player's turns faster, but jitters more
+    [SerializeField] private float navSampleRadius = 2f;     // keep tight: a wide sample can snap the lead point through a wall
     private float cullTimer;
+    private Vector3 smoothedPlayerVelocity;
     private IState currentState;
     private AttackState attackState;
     private ChaseState chaseState;
@@ -83,6 +88,16 @@ public class EnemyStateMachine : MonoBehaviour
             currentState.Execute();
         }
 
+        // Smooth the player's velocity before anyone predicts off it — raw bhop/strafe velocity swings
+        // every frame, and feeding that straight into a chase target is what makes agents dance in place.
+        if (playerMovement != null)
+        {
+            smoothedPlayerVelocity = Vector3.Lerp(
+                smoothedPlayerVelocity,
+                playerMovement.HorizontalVelocity,
+                1f - Mathf.Exp(-velocitySmoothing * Time.deltaTime));   // framerate-independent
+        }
+
             // recycle hopeless stragglers into the forward cone
         if (currentState != deadState && waveManager != null && playerTransform != null)
         {
@@ -113,6 +128,40 @@ public class EnemyStateMachine : MonoBehaviour
         return Vector3.Distance(transform.position, playerTransform.position);
     }
 
+    // Where the player will be leadTime seconds from now, as a point this enemy can actually path to.
+    // Three things matter here, all learned the hard way:
+    //   1. it leads off the SMOOTHED velocity, so strafe/bhop noise doesn't make the target dance
+    //   2. the lead is clamped BEFORE the NavMesh sample — sampling a far-off point first lets it snap
+    //      to unrelated geometry (often on the far side of a wall), which teleports the destination
+    //   3. velocity that is closing on THIS enemy is stripped out — leading into a player who is running
+    //      at you just sends the enemy sprinting past them. Only lateral movement is worth cutting off.
+    public Vector3 PredictedPlayerPosition(float leadTime, float maxLeadDistance)
+    {
+        Vector3 playerPos = playerTransform.position;
+        Vector3 vel = smoothedPlayerVelocity;
+
+        Vector3 toEnemy = transform.position - playerPos;
+        toEnemy.y = 0f;
+        if (toEnemy.sqrMagnitude > 0.01f)
+        {
+            Vector3 axis = toEnemy.normalized;
+            float closing = Vector3.Dot(vel, axis);
+            if (closing > 0f)
+            {
+                vel -= axis * closing;
+            }
+        }
+
+        Vector3 predicted = playerPos + Vector3.ClampMagnitude(vel * leadTime, maxLeadDistance);
+
+        if (NavMesh.SamplePosition(predicted, out NavMeshHit hit, navSampleRadius, NavMesh.AllAreas))
+        {
+            return hit.position;
+        }
+
+        return playerPos;   // lead point isn't reachable — just go at the player directly
+    }
+
     public void ResetEnemy()
     {
         // if (currentState == deadState)
@@ -122,12 +171,15 @@ public class EnemyStateMachine : MonoBehaviour
         EnemyHealth.ResetHealth();
         EnemyRagdoll.DisableRagdoll();
         EnemyCollider.enabled = true;
+        smoothedPlayerVelocity = Vector3.zero;   // pooled enemies must not inherit the last owner's lead
+        EnemyAttack.ResetAttack();               // ...nor the previous life's hit cooldown
         ChangeState(idleState);
     }
 
     public void SetPlayerTransform(Transform player)
     {
         playerTransform = player;
+        playerMovement = player.GetComponent<PlayerMovement>();
     }
 
     public void SetWaveManager(WaveManager wm)

@@ -87,7 +87,7 @@ Best idea in the audit. Power isn't a switch, it's a transformation. Build it as
 You couldn't tell your health, shells, power state, or objective. That's why the game feels formless.
 
 - [ ] ⛔ DECIDE: commit to the ASCII UI direction (or don't) — it changes every element below
-- [ ] ▪ Health feedback: COD-Zombies style blood/damage vignette
+- [ ] ▪ Health feedback: COD-Zombies style blood/damage vignette — *temp debug version exists* (`DamageVignette.cs`: procedural red tunnel-vision overlay driven by `PlayerStats.OnDamaged`/`OnHealthChanged`). Built as a read-out for testing enemy damage; still needs the real art/shader pass before this ticks.
 - [ ] ▪ Damage direction indicator (critical for the chill test)
 - [ ] ▪ Shell counter (3 pips) + progress toward next shell
 - [ ] ▪ Objective prompt: what am I supposed to do RIGHT NOW
