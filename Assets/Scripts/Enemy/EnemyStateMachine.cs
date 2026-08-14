@@ -14,6 +14,7 @@ public class EnemyStateMachine : MonoBehaviour
     [SerializeField] private EnemyAttack enemyAttack;
     [SerializeField] private EnemyHealth enemyHealth;
     [SerializeField] private EnemyAnimator enemyAnim;
+    [SerializeField] private EnemyTelegraph enemyTelegraph;   // optional — enemies without one just don't tell
     [SerializeField] private EnemyRagdoll enemyRagdoll;
     [SerializeField] private EnemyDrop enemyDrop;
     [SerializeField] private WaveManager waveManager;
@@ -42,6 +43,7 @@ public class EnemyStateMachine : MonoBehaviour
     public EnemyAttack EnemyAttack => enemyAttack;
     public EnemyHealth EnemyHealth => enemyHealth;
     public EnemyAnimator EnemyAnimator => enemyAnim;
+    public EnemyTelegraph EnemyTelegraph => enemyTelegraph;
     public EnemyRagdoll EnemyRagdoll => enemyRagdoll;
     public EnemyDrop EnemyDrop => enemyDrop;
     public WaveManager WaveManager => waveManager;
@@ -62,6 +64,7 @@ public class EnemyStateMachine : MonoBehaviour
         enemyAttack = GetComponent<EnemyAttack>();
         enemyHealth = GetComponent<EnemyHealth>();
         enemyAnim = GetComponent<EnemyAnimator>();
+        enemyTelegraph = GetComponent<EnemyTelegraph>();
         enemyRagdoll = GetComponent<EnemyRagdoll>();
         enemyDrop = GetComponent<EnemyDrop>();
         waveManager = GetComponent<WaveManager>();
@@ -173,6 +176,7 @@ public class EnemyStateMachine : MonoBehaviour
         EnemyCollider.enabled = true;
         smoothedPlayerVelocity = Vector3.zero;   // pooled enemies must not inherit the last owner's lead
         EnemyAttack.ResetAttack();               // ...nor the previous life's hit cooldown
+        if (enemyTelegraph != null) enemyTelegraph.ResetTelegraph();   // ...nor respawn still red and swollen
         ChangeState(idleState);
     }
 

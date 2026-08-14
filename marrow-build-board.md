@@ -49,7 +49,7 @@ Broken things that make everything downstream lie to you. Most are under an hour
 - [ ] ▪ Enemy type: Sprinter (fast, fragile, punishes running)
 - [ ] ▪ Enemy type: Crawler (low, hard to hit, clogs corridors)
 - [ ] ▪ Enemy type: Brute/Blocker (slow, tanky, denies a route)
-- [ ] ▪ Enemy attack telegraph — visible AND audible wind-up
+- [ ] ▪ Enemy attack telegraph — visible AND audible wind-up — *visible half done* (`EnemyTelegraph.cs`: tint + swell ramping across `AttackState.attackWindup`, fired 0.6s before every swing). Audio hook is wired (`windupClip`) but **no clip exists yet** — ticks when Phase 5 supplies one.
 - [ ] ▪ Make escape cost something (stamina, or slow while firing/throwing)
 - [ ] ▪ Make killing mandatory, not optional (enemies block progress; shells/mobility come from kills)
 - [ ] ▪ Add the "wonder" to the wonder weapon — pick ONE exotic effect (chain lightning / dismemberment / ragdoll-launch / freeze-shatter)
