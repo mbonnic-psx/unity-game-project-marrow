@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6a13f2fdfe3d94293a6789cfa9a4ea, type: 3}
+  m_Name: Skeleton
+  m_EditorClassIdentifier:
+  displayName: Skeleton
+  prefab: {fileID: 5805322376968363484, guid: de05689e349913b4d9257d550dbff642, type: 3}
+  poolSize: 20
+  maxHealth: 99
+  damage: 33
+  moveSpeed: 8
+  acceleration: 20
+  angularSpeed: 300
+  overrideAgentSize: 0
+  agentRadius: 1
+  agentHeight: 5
+  attackCoolDown: 2
+  attackWindup: 0.6
+  attackRange: 2.5
+  attackExitRange: 3.2
+  leadTime: 0.5
+  maxLeadDistance: 5
+  interceptRange: 4
+  spawnWeight: 1
+  firstWave: 1

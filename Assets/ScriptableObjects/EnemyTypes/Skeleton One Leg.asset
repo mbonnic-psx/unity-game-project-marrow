@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6a13f2fdfe3d94293a6789cfa9a4ea, type: 3}
+  m_Name: Skeleton One Leg
+  m_EditorClassIdentifier:
+  displayName: One-Leg Crawler
+  prefab: {fileID: 5112976795055862666, guid: f1116080a0b06fa4f8bb2743ff85d5e0, type: 3}
+  poolSize: 15
+  maxHealth: 60
+  damage: 25
+  moveSpeed: 3.2
+  acceleration: 10
+  angularSpeed: 180
+  overrideAgentSize: 1
+  agentRadius: 0.4
+  agentHeight: 1.2
+  attackCoolDown: 1.6
+  attackWindup: 0.5
+  attackRange: 2
+  attackExitRange: 2.6
+  leadTime: 0.3
+  maxLeadDistance: 3
+  interceptRange: 4
+  spawnWeight: 0
+  firstWave: 3

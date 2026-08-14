@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6a13f2fdfe3d94293a6789cfa9a4ea, type: 3}
+  m_Name: Skeleton Brute
+  m_EditorClassIdentifier:
+  displayName: Brute
+  prefab: {fileID: 5703371198004207783, guid: c2802e938268a0248ad547ff9601870b, type: 3}
+  poolSize: 6
+  maxHealth: 400
+  damage: 55
+  moveSpeed: 4
+  acceleration: 10
+  angularSpeed: 140
+  overrideAgentSize: 1
+  agentRadius: 1.2
+  agentHeight: 5
+  attackCoolDown: 2.8
+  attackWindup: 0.9
+  attackRange: 3
+  attackExitRange: 3.8
+  leadTime: 0.15
+  maxLeadDistance: 2
+  interceptRange: 4
+  spawnWeight: 0.25
+  firstWave: 4

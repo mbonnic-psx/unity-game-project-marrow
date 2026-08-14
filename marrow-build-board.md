@@ -47,9 +47,9 @@ Broken things that make everything downstream lie to you. Most are under an hour
 - [ ] ▪ Smarter AI: intercept and cut off, don't just chase the transform (path to a predicted future position) — **verified still open, see NEXT UP**
 - [x] ▪ Spawn enemies *ahead* of the player and around corners, not just behind — implemented in `WaveManager.cs` (`leadTime`, `aheadWeight`, `PickSpawnPoint()` weighted forward-cone pick)
 - [x] ▪ **Multi-enemy-type infrastructure** — `EnemyTypeSO` + `EnemyIdentity`, `ObjectPool` refactored to `Dictionary<EnemyTypeSO, Queue>`, weighted spawn table in `WaveManager` (`spawnWeight`/`firstWave` per type). Also fixed the long-standing `SpawnEnemy` pool leak (dequeued before its guards). Enemy types are now data, not code.
-- [ ] ▪ Enemy type: Sprinter (fast, fragile, punishes running)
-- [ ] ▪ Enemy type: Crawler (low, hard to hit, clogs corridors)
-- [ ] ▪ Enemy type: Brute/Blocker (slow, tanky, denies a route)
+- [x] ▪ Enemy type: Sprinter (fast, fragile, punishes running) — `Skeleton Sprinter.asset`: 45hp / 20dmg / speed 10, leads hardest (`leadTime` 0.9) so it's the type that actually cuts you off. Enters wave 2.
+- [ ] ▪ Enemy type: Crawler (low, hard to hit, clogs corridors) — *types authored, prefabs not built*: `Skeleton One Leg` / `Skeleton No Legs` are bare model prefabs (no NavMeshAgent, no MonoBehaviours). Their assets exist with `spawnWeight 0` so they can't spawn until the component stack is added. `Skeleton Sprinter Crawler` IS configured and live from wave 5.
+- [x] ▪ Enemy type: Brute/Blocker (slow, tanky, denies a route) — `Skeleton Brute.asset`: 400hp / 55dmg / speed 4, barely leads (it's a wall, not an interceptor). Enters wave 4.
 - [ ] ▪ Enemy attack telegraph — visible AND audible wind-up — *visible half done* (`EnemyTelegraph.cs`: tint + swell ramping across `AttackState.attackWindup`, fired 0.6s before every swing). Audio hook is wired (`windupClip`) but **no clip exists yet** — ticks when Phase 5 supplies one.
 - [ ] ▪ Make escape cost something (stamina, or slow while firing/throwing)
 - [ ] ▪ Make killing mandatory, not optional (enemies block progress; shells/mobility come from kills)

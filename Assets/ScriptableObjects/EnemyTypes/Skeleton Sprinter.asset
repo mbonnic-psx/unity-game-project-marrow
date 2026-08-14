@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6a13f2fdfe3d94293a6789cfa9a4ea, type: 3}
+  m_Name: Skeleton Sprinter
+  m_EditorClassIdentifier:
+  displayName: Sprinter
+  prefab: {fileID: 5805322376968363484, guid: 197778c8195f99242a5d6f3900894f13, type: 3}
+  poolSize: 15
+  maxHealth: 45
+  damage: 20
+  moveSpeed: 10
+  acceleration: 24
+  angularSpeed: 360
+  overrideAgentSize: 0
+  agentRadius: 1
+  agentHeight: 5
+  attackCoolDown: 1.2
+  attackWindup: 0.35
+  attackRange: 2.2
+  attackExitRange: 2.9
+  leadTime: 0.9
+  maxLeadDistance: 7
+  interceptRange: 5
+  spawnWeight: 0.6
+  firstWave: 2
