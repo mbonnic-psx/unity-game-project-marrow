@@ -26,6 +26,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float selectionSharpness = 1.5f; // higher = favors best point harder, lower = more even spread
     private readonly List<Transform> _candidates = new List<Transform>();
     private readonly List<float> _weights = new List<float>();
+    private readonly List<EnemyTypeSO> _typeCandidates = new List<EnemyTypeSO>();
+    private readonly List<float> _typeWeights = new List<float>();
 
     #region Getters
     public int CurrentWave => currentWave;
@@ -56,21 +58,25 @@ public class WaveManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        GameObject enemy = objectPool.GetEnemy();
-
+        // Every early-out is checked BEFORE dequeuing. GetEnemy used to run first, so a spawn that bailed on
+        // any of these conditions dropped an enemy that never came back — the pool leaked a little each wave.
         if (enemiesRemainingToSpawn <= 0)
         {
             return;
         }
 
+        Transform sp = PickSpawnPoint();
+        if (sp == null) return;
+
+        EnemyTypeSO type = PickEnemyType();
+        if (type == null) return;
+
+        GameObject enemy = objectPool.GetEnemy(type);
         if (enemy == null)
         {
             return;
         }
 
-        //enemy.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
-        Transform sp = PickSpawnPoint();
-        if (sp == null) return;
         enemy.transform.position = sp.position;
         enemy.transform.rotation = Quaternion.identity;
         enemy.SetActive(true);
@@ -107,6 +113,40 @@ public class WaveManager : MonoBehaviour
             //Debug.Log($"Adding spawn point: {sp.name} | Active: {sp.gameObject.activeInHierarchy}");
             spawnPoints.Add(sp);
         }
+    }
+
+    // Weighted roulette across every type eligible this wave. Weight and first-appearance wave live on the
+    // EnemyTypeSO itself, so adding a type to the roster is an asset change, not a code change.
+    private EnemyTypeSO PickEnemyType()
+    {
+        var types = objectPool.EnemyTypes;
+        if (types == null || types.Count == 0) return null;
+
+        _typeCandidates.Clear();
+        _typeWeights.Clear();
+        float total = 0f;
+
+        for (int i = 0; i < types.Count; i++)
+        {
+            EnemyTypeSO type = types[i];
+            if (type == null || type.spawnWeight <= 0f) continue;
+            if (currentWave < type.firstWave) continue;
+            if (!objectPool.HasAvailable(type)) continue;   // skip an exhausted pool rather than wasting the spawn
+
+            _typeCandidates.Add(type);
+            _typeWeights.Add(type.spawnWeight);
+            total += type.spawnWeight;
+        }
+
+        if (_typeCandidates.Count == 0) return null;
+
+        float r = Random.value * total;
+        for (int i = 0; i < _typeCandidates.Count; i++)
+        {
+            r -= _typeWeights[i];
+            if (r <= 0f) return _typeCandidates[i];
+        }
+        return _typeCandidates[_typeCandidates.Count - 1];
     }
 
     private Transform PickSpawnPoint()

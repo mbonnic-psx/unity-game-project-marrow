@@ -15,6 +15,7 @@ public class EnemyStateMachine : MonoBehaviour
     [SerializeField] private EnemyHealth enemyHealth;
     [SerializeField] private EnemyAnimator enemyAnim;
     [SerializeField] private EnemyTelegraph enemyTelegraph;   // optional — enemies without one just don't tell
+    [SerializeField] private EnemyIdentity enemyIdentity;     // optional — untyped enemies keep their prefab stats
     [SerializeField] private EnemyRagdoll enemyRagdoll;
     [SerializeField] private EnemyDrop enemyDrop;
     [SerializeField] private WaveManager waveManager;
@@ -44,6 +45,8 @@ public class EnemyStateMachine : MonoBehaviour
     public EnemyHealth EnemyHealth => enemyHealth;
     public EnemyAnimator EnemyAnimator => enemyAnim;
     public EnemyTelegraph EnemyTelegraph => enemyTelegraph;
+    public EnemyIdentity EnemyIdentity => enemyIdentity;
+    public EnemyTypeSO Type => enemyIdentity != null ? enemyIdentity.Type : null;   // states read tunables off this
     public EnemyRagdoll EnemyRagdoll => enemyRagdoll;
     public EnemyDrop EnemyDrop => enemyDrop;
     public WaveManager WaveManager => waveManager;
@@ -65,6 +68,7 @@ public class EnemyStateMachine : MonoBehaviour
         enemyHealth = GetComponent<EnemyHealth>();
         enemyAnim = GetComponent<EnemyAnimator>();
         enemyTelegraph = GetComponent<EnemyTelegraph>();
+        enemyIdentity = GetComponent<EnemyIdentity>();
         enemyRagdoll = GetComponent<EnemyRagdoll>();
         enemyDrop = GetComponent<EnemyDrop>();
         waveManager = GetComponent<WaveManager>();
@@ -171,6 +175,19 @@ public class EnemyStateMachine : MonoBehaviour
         // {
         //     return;
         // }
+        // Resolved lazily, not in Awake: ObjectPool stamps EnemyIdentity onto the instance after Instantiate
+        // has already run Awake, so a spawn-time lookup is the only one guaranteed to find it.
+        if (enemyIdentity == null)
+        {
+            enemyIdentity = GetComponent<EnemyIdentity>();
+        }
+
+        // Push type stats before anything reads them — a pooled body may have last lived as another type.
+        if (enemyIdentity != null)
+        {
+            enemyIdentity.ApplyStats(enemyHealth, enemyNav, enemyAttack);
+        }
+
         EnemyHealth.ResetHealth();
         EnemyRagdoll.DisableRagdoll();
         EnemyCollider.enabled = true;

@@ -57,6 +57,12 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
+    // Driven by EnemyTypeSO on spawn — a Brute and a Sprinter share this component but not this number.
+    public void SetDamage(float value)
+    {
+        damageAmount = Mathf.Max(0f, value);
+    }
+
     // Pooled enemies keep stale state; a recycled enemy must be able to swing immediately.
     public void ResetAttack()
     {

@@ -44,4 +44,11 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+
+    // Driven by EnemyTypeSO on spawn: a pooled body may have last lived as a different enemy type entirely.
+    public void SetMaxHealth(float value)
+    {
+        maxHealth = Mathf.Max(1f, value);
+        currentHealth = maxHealth;
+    }
 }

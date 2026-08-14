@@ -46,6 +46,7 @@ Broken things that make everything downstream lie to you. Most are under an hour
 - [x] ▪ Rebalance enemy vs. player speed so pure fleeing fails
 - [ ] ▪ Smarter AI: intercept and cut off, don't just chase the transform (path to a predicted future position) — **verified still open, see NEXT UP**
 - [x] ▪ Spawn enemies *ahead* of the player and around corners, not just behind — implemented in `WaveManager.cs` (`leadTime`, `aheadWeight`, `PickSpawnPoint()` weighted forward-cone pick)
+- [x] ▪ **Multi-enemy-type infrastructure** — `EnemyTypeSO` + `EnemyIdentity`, `ObjectPool` refactored to `Dictionary<EnemyTypeSO, Queue>`, weighted spawn table in `WaveManager` (`spawnWeight`/`firstWave` per type). Also fixed the long-standing `SpawnEnemy` pool leak (dequeued before its guards). Enemy types are now data, not code.
 - [ ] ▪ Enemy type: Sprinter (fast, fragile, punishes running)
 - [ ] ▪ Enemy type: Crawler (low, hard to hit, clogs corridors)
 - [ ] ▪ Enemy type: Brute/Blocker (slow, tanky, denies a route)

@@ -2,14 +2,23 @@ using UnityEngine;
 
 public class ChaseState : IState
 {
+    // Fallbacks for an enemy with no EnemyTypeSO — the values the single skeleton was tuned at.
+    private const float DefaultAttackRange = 2.5f;
+    private const float DefaultLeadTime = 0.5f;
+    private const float DefaultMaxLeadDistance = 5f;
+    private const float DefaultInterceptRange = 4f;
+
     private EnemyStateMachine esm;
-    private float attackRange = 2.5f;       // must stay BELOW AttackState.attackExitRange or the two states flip-flop
+
+    // Resolved from EnemyTypeSO in EnterState; see AttackState for why these are cached rather than read live.
+    private float attackRange = DefaultAttackRange;              // must stay BELOW AttackState's exit range or the states flip-flop
+    private float leadTime = DefaultLeadTime;                    // secs ahead to lead the player by while chasing
+    private float maxLeadDistance = DefaultMaxLeadDistance;      // cap how far the lead point sits from the player's live position
+    private float interceptRange = DefaultInterceptRange;        // below this, chase the live position (avoids twitchy pathing up close)
+
     private float idleRange = 30f;
     private float timer;
     private float updateInterval = 0.2f;
-    private float leadTime = 0.5f;          // secs ahead to lead the player by while chasing
-    private float maxLeadDistance = 5f;     // cap how far the lead point can sit from the player's live position
-    private float interceptRange = 4f;      // below this, chase the live position instead of the lead (avoids twitchy pathing near attackRange)
     private float repathThreshold = 0.75f;  // don't re-issue a path for a target that barely moved
     private Vector3 lastDestination;
     private bool hasDestination;
@@ -21,6 +30,12 @@ public class ChaseState : IState
 
     public void EnterState()
     {
+        EnemyTypeSO type = esm.Type;
+        attackRange = type != null ? type.attackRange : DefaultAttackRange;
+        leadTime = type != null ? type.leadTime : DefaultLeadTime;
+        maxLeadDistance = type != null ? type.maxLeadDistance : DefaultMaxLeadDistance;
+        interceptRange = type != null ? type.interceptRange : DefaultInterceptRange;
+
         esm.EnemyAnimator.PlayAnimation("chaseAnim");
         hasDestination = false;                          // reset here, not ExitState — pooled enemies can skip exit paths
         timer = Random.Range(0f, updateInterval);        // stagger re-paths so a pack doesn't all recompute on one frame
