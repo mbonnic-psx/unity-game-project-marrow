@@ -91,6 +91,7 @@ Assets/
 
 ## Git
 
-- Repo: `mbonnic-psx/unity-game-project-marrow` (main branch, managed via GitHub Desktop)
+- Repo: `mbonnic-psx/Marrow` (renamed from `unity-game-project-marrow` — the old URL only survives via GitHub's redirect, so don't reintroduce it). Managed via GitHub Desktop.
+- Phase work goes on its own branch off `main` (e.g. `phase-1-threat-combat`), not straight onto `main`
 - Unity `.gitignore` is in place (Library/ etc. excluded); Plastic SCM was disconnected — don't reintroduce it
 - Commit `.meta` files alongside their assets; never delete `.meta` files for assets that still exist
