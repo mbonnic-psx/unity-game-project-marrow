@@ -12,6 +12,10 @@ Marrow is a first-person, PS1-aesthetic survival-horror wave shooter built in Un
 
 The current design problem, confirmed by playtest: **the player outruns everything, so combat is optional and therefore boring.** The fix is spatial pressure (forward-biased spawning, intercept pathing, objective anchors), NOT enemy speed-scaling — speed-scaling loses to bhop compounding. Prioritize work that makes combat mandatory and fun over new content or maps.
 
+**Returning to the project after a break? Read `marrow-leave-off.md` first** — it's the session-state
+snapshot (what's half-finished, what's unverified, what editor wiring is outstanding). Then use the board
+below for what to work on.
+
 **Before picking up new work, check `marrow-build-board.md`.** It is the authoritative task list — ordered by what makes the game fun, not what's easiest — and its `▶ NEXT UP` section is the current answer to "what should I work on." Update it (not just this file) when a task is finished.
 
 ## Tech stack
